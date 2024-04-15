@@ -10,6 +10,7 @@ html{
 body{
     font-family: Quicksand, sans-serif;
     position: relative;
+    overflow-x: hidden
 }
 
 ul{
@@ -27,13 +28,13 @@ main{
     list-style-type: none;
 }
 
+
 header ul{
     box-sizing: border-box;
     list-style-type: none;
     overflow: hidden;
     padding: 10px;
     background-color: #E8E8E8;
-
 }
 
 h4{
@@ -58,26 +59,12 @@ a{
     text-decoration: none;
     color: aquamarine;
     padding: 10px;
+    transition: color 0.3s ease;
 }
 
 .textabout{
     padding-bottom: 5px;
     padding-top: 10px;
-}
-
-.Bar:hover{
-    color: #4974B3;
-}
-
-.Bar{
-    float: right;
-    font-family: Quicksand, sans-serif;
-    font-weight: 500;
-    flex-direction: column;
-    color: #444;
-    transition: .3s;
-    margin-block: 15px;
-    margin-right: 6px;
 }
 
 
@@ -103,6 +90,7 @@ footer{
 
     width: 100%;
 }
+
 
 .content{
     display: flex;
@@ -151,4 +139,150 @@ img {
 
 .ul_footer{
     padding: 16px;
+}
+
+#menuToggle
+{
+  display: block;
+  position: absolute;
+  top: 38px;
+  right: 50px;
+  
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #444;
+  border-radius: 5px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #4974B3;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  opacity: 1;
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: absolute;
+  width: 185px;
+  margin: -100px 0 0 0;
+  padding: 35px;
+  padding-top: 110px;
+  right: -100px;
+  border-radius: 45px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 2px;
+  font-family: Quicksand, sans-serif;
+  font-weight: 600;
+  font-size: large;
+  color: #444;
+  transition: .3s;
+}
+
+#menu li:hover{
+    color: #4974B3;
+}
+
+/*
+ * And let's fade it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  #menu {
+    transform: none;
+    opacity: 0;
+
+    transition: opacity 1s cubic-bezier(0.77,0.2,0.05,1.0);
+  }
 }
