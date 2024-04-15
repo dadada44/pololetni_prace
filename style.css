@@ -240,10 +240,10 @@ img {
 #menu
 {
   position: absolute;
-  width: 185px;
+  width: 200px;
   margin: -100px 0 0 0;
   padding: 35px;
-  padding-top: 110px;
+  padding-top: 130px;
   right: -100px;
   border-radius: 45px;
   box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;  -webkit-font-smoothing: antialiased;
