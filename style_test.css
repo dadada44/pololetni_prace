@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 14px;
+}
+
+body{
+    font-family: Quicksand, sans-serif;
+    position: relative;
+    overflow-x: hidden
+}
+
+ul{
+    margin: auto;
+}
+
+main{
+    max-width: 1300px;
+    padding: 10px;
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+header ul{
+    box-sizing: border-box;
+    list-style-type: none;
+    overflow: hidden;
+    padding: 10px;
+    background-color: #E8E8E8;
+}
+
+a{
+    text-decoration: none;
+    padding: 10px;
+}
+
+
+.Logo{
+    float: left;
+    color: #444;
+    font-family: Quicksand, sans-serif;
+    font-weight: 600;
+    text-align: center;
+    font-size: 40px;
+    font-style: normal;
+    line-height: normal;
+}
+
+footer{
+    box-sizing: border-box;
+    list-style-type: none;
+    overflow: hidden;
+    padding: 10px;
+    background-color: #888b94;
+    display: flex;
+    position: absolute;
+    width: 100%;
+}
+
+
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
+}
+
+h2{
+    font-size: xx-large;
+}
+
+h4{
+    font-size: x-large;
+}
+
+.text{
+    font-size: large;
+}
+
+article {
+    background-color: #b9bcc7;
+    transition: 0.3s;
+    padding: 25px;
+    border-radius: 35px;
+}
+
+article:hover{
+    transition: 0.3s ease;
+    box-shadow: 0 0 15px #2f2f2f;
+}
+
+.artical-content{
+    display: flex;
+    text-align: justify; /* Zarovnání textu do bloku */
+    justify-content: space-between;
+}
+
+.artical-content div{
+    width: 45%;
+}
+
+.artical-content .img{
+    width: 45%;
+}
+
+.artical-content .img img{
+   width: 100%;
+   border-radius: 5px;
+   object-fit: cover;
+
+}
+
+@media screen and (max-width: 768px){
+    .artical-content{
+        display: flex;
+        text-align: justify; /* Zarovnání textu do bloku */
+        justify-content: space-between;
+        flex-direction: column-reverse;
+        gap: 36px;
+        padding-top: 10px;
+    }
+
+    .artical-content div{
+        width: 100%;
+    }
+
+    .artical-content .img{
+        width: 100%;
+    }
+    
+}
+
+.ul_footer{
+    padding: 16px;
+}
+
