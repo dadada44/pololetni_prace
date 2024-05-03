@@ -176,7 +176,7 @@ body {
 .navbar-container {
   display: flex;
   justify-content: space-between;
-  height: 64px;
+  height: 85px;
   align-items: center;
 }
 
@@ -205,12 +205,10 @@ body {
 }
 
 .logo {
-  order: 1;
-  font-size: 2.3rem;
-  margin-bottom: 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: 2rem;
+  top: 25px;
+  padding-left: 25px;
+  position: absolute;
 }
 /* ......../ media query /.......... */
 
@@ -298,7 +296,7 @@ body {
 
   .logo {
     position: absolute;
-    top: 5px;
+    top: 25px;
     right: 15px;
     font-size: 2rem;
   }
@@ -319,6 +317,8 @@ body {
     transform: rotate(-35deg);
   }
 }
+
+
 
 @media (max-width: 500px) {
   html {
